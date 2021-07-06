@@ -2,6 +2,13 @@ import json
 
 data = json.load(open("data.json"))
 
-print(type(data))
+def translate(word):
+	word = word.lower()
+	if word in data:
+		return data[word]
+	else:
+		return "word not found"
 
-print(data)
+word = input("enter word: ")
+
+print(translate(word))
